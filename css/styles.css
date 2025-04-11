@@ -1,0 +1,286 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #3498db;
+  --text-color: #333;
+  --light-text: #777;
+  --light-bg: #f9f9f9;
+  --border-color: #eaeaea;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", "Arial", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 15px;
+}
+
+.versao {
+  background-color: rgb(4, 107, 209);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.versao a {
+  color: white;
+  text-decoration: none;
+}
+
+.versao:hover {
+  background-color: rgb(5, 50, 95);
+}
+
+.contact-info {
+  background-color: var(--secondary-color);
+  padding: 15px 40px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contact-info a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+  color: var(--accent-color);
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidebar {
+  flex: 1;
+  background-color: var(--light-bg);
+  padding: 30px;
+  border-right: 1px solid var(--border-color);
+}
+
+.content {
+  flex: 2;
+  padding: 30px;
+}
+
+h2 {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+h3 {
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.job {
+  margin-bottom: 30px;
+}
+
+.job-title {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+
+.company {
+  font-weight: 500;
+  color: var(--accent-color);
+}
+
+.period {
+  color: var(--light-text);
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.location {
+  color: var(--light-text);
+  margin-bottom: 10px;
+}
+
+ul.skills {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+ul.skills li {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+
+ul.responsibilities {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+ul.responsibilities li {
+  margin-bottom: 8px;
+}
+
+.achievements {
+  background-color: var(--light-bg);
+  padding: 15px;
+  border-left: 3px solid var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.achievements strong {
+  color: var(--primary-color);
+}
+
+.education-item {
+  margin-bottom: 20px;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-category {
+  flex: 1;
+  min-width: 180px;
+  margin-bottom: 20px;
+}
+
+.skill-category h4 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 0.9rem;
+}
+
+@media print {
+  body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    box-shadow: none;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .achievements {
+    break-inside: avoid;
+  }
+
+  .job {
+    break-inside: avoid;
+  }
+
+  .education-item {
+    break-inside: avoid;
+  }
+
+  .main-content {
+    display: block;
+  }
+
+  .sidebar,
+  .content {
+    width: 100%;
+    display: block;
+    page-break-inside: avoid;
+  }
+
+  header,
+  .contact-info {
+    page-break-after: avoid;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  .export-pdf {
+    display: none;
+  }
+
+  @page {
+    size: A4;
+    margin: 1cm;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
